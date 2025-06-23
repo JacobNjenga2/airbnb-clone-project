@@ -114,5 +114,35 @@ Users can search for properties using filters like location, price range, proper
 Administrators have access to a dedicated dashboard to manage users, properties, bookings, and reported content. This ensures platform integrity and smooth operations.
 
 ---
+## 🔒 API Security
+
+Securing the backend APIs is a critical part of this project to ensure that user data, transactions, and platform integrity are protected. Below are the key security measures that have been or will be implemented:
+
+---
+
+### 🔐 Authentication
+Only verified users can access protected endpoints using token-based or session-based authentication (e.g., JWT or Django sessions). This prevents unauthorized access and ensures that actions are tied to a known identity.
+
+### 🛂 Authorization
+Role-based access control is enforced to ensure that users can only perform actions they are permitted to—e.g., only hosts can manage their properties, and only guests can make bookings. This protects platform functionality and user data integrity.
+
+### 🚫 Rate Limiting
+Rate limiting is applied to prevent abuse of the API through excessive requests or brute-force login attempts. This helps maintain API availability and reduces the risk of denial-of-service (DoS) attacks.
+
+### 🔑 Secure Password Storage
+User passwords are hashed using strong algorithms like bcrypt or Argon2 before storage. This ensures that even if the database is compromised, raw passwords are not exposed.
+
+### 🧾 Input Validation & Sanitization
+All input is validated and sanitized to prevent SQL injection, cross-site scripting (XSS), and other injection-based attacks. This ensures system stability and data integrity.
+
+### 📦 Secure Data Transmission
+All API traffic is encrypted using HTTPS to prevent man-in-the-middle attacks and ensure secure communication between client and server.
+
+### 💳 Payment Security
+Payment-related endpoints are protected with an extra layer of validation and monitored for suspicious activity. This ensures that transactions remain safe and tamper-proof.
+
+---
+
+API security is crucial to protect sensitive user data, prevent fraud, and maintain trust in the platform. Every feature—whether user login, property management, or payment—requires strong security practices to ensure safe usage for all participants.
 
 
