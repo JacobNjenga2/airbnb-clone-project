@@ -29,3 +29,95 @@
 | **Heroku / Render / Railway** *(choose based on what you used)* | Platform-as-a-Service (PaaS) used for deploying and hosting the web application online.                                                              |
 | **Postman**                                                     | API testing tool used to test and document API endpoints.                                                                                            |
 | **Jenkins / GitHub Actions** *(if used)*                        | CI/CD tool used to automate testing, building, and deployment of code.                                                                               |
+
+
+## 🧩 Database Design
+This project uses a relational database structure to manage data efficiently. Below are the core entities and their relationships:
+
+#🔑 Key Entities & Fields
+1. Users
+Represents individuals who use the platform (hosts or guests).
+
+**Fields:**
+id: Unique identifier (Primary Key)
+
+username: Unique login name
+
+email: Contact email
+
+password: Hashed password
+
+role: Defines if the user is a host, guest, or admin
+
+2. Properties
+Represents the listings added by hosts.
+
+Fields:
+
+id: Unique property identifier
+
+user_id: Foreign Key – references Users
+
+title: Name of the property
+
+location: Address or general area
+
+price_per_night: Rental cost per night
+
+3. Bookings
+Represents reservation details made by users.
+
+Fields:
+
+id: Unique booking ID
+
+user_id: Foreign Key – references Users (guest)
+
+property_id: Foreign Key – references Properties
+
+check_in: Start date of booking
+
+check_out: End date of booking
+
+4. Reviews
+Captures feedback left by guests about properties.
+
+Fields:
+
+id: Unique review ID
+
+user_id: Foreign Key – references Users (guest)
+
+property_id: Foreign Key – references Properties
+
+rating: Numeric score (e.g., 1-5)
+
+comment: Text feedback
+
+5. Payments
+Tracks completed transactions.
+
+Fields:
+
+id: Unique payment ID
+
+booking_id: Foreign Key – references Bookings
+
+amount: Total cost charged
+
+payment_status: e.g., pending, completed, failed
+
+payment_date: Timestamp of transaction
+
+# 🔗 Entity Relationships
+A User can have many Properties (if they are a host).
+
+A Property belongs to one User.
+
+A User can make many Bookings (if they are a guest).
+
+A Booking is associated with one Property and one User.
+
+A Property can have many Reviews from different Users.
+
+A Booking can have one Payment.
