@@ -144,5 +144,30 @@ Payment-related endpoints are protected with an extra layer of validation and mo
 ---
 
 API security is crucial to protect sensitive user data, prevent fraud, and maintain trust in the platform. Every feature—whether user login, property management, or payment—requires strong security practices to ensure safe usage for all participants.
+## 🚀 CI/CD Pipeline
+
+CI/CD stands for **Continuous Integration** and **Continuous Deployment/Delivery**. It is a development practice that automates the process of building, testing, and deploying code, making it faster and more reliable to release updates.
+
+---
+
+### 🔄 Why CI/CD is Important
+
+- **Continuous Integration** ensures that new code pushed by developers is automatically tested and merged, reducing integration issues and improving code quality.
+- **Continuous Deployment** automates the release of new features to staging or production environments, ensuring faster delivery and minimizing human error.
+- This process helps maintain high code standards, reduces bugs in production, and allows for faster iteration and feedback loops.
+
+---
+
+### 🛠️ Tools Used
+
+- **GitHub Actions**: Automates tasks such as running tests, linting code, and deploying to servers directly from the GitHub repository.
+- **Docker**: Ensures consistent environments for testing and deployment by packaging the application and its dependencies into containers.
+- **Heroku / Render / Railway** *(depending on what you're using)*: Platform-as-a-Service solutions that integrate easily with CI pipelines for automated deployments.
+- **pytest / unittest** *(if using Python)*: Testing frameworks used to validate the functionality of the application before deployment.
+
+---
+
+Implementing a CI/CD pipeline improves the development workflow, ensures consistent quality, and enables faster, safer deployment of new features to users.
+
 
 
